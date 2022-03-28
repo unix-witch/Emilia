@@ -35,7 +35,6 @@
     );
     
     
-    $banned_words = array("sussy");  //Words that wil result in a immediate ban
-
+    $banned_words = array("");  //Words that wil result in a immediate ban
     $dontSendFiles = array("php", "db", "thread", "postData");
 ?>
