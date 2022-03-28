@@ -4,7 +4,7 @@
     //I switch to a new git service
     $maxPostListening = 30;
     $software_name = "Sarah";
-    $software_link = "";
+    $software_link = "https://github.com/unix-witch/Sarah";
 
     //Not recommended to completly replace
     //due to the pink ink license
