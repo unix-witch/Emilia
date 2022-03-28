@@ -1,0 +1,161 @@
+body {
+    font-family: Times;
+}
+
+.error {color: #FF0000; text-align: center;}
+.header { 
+    text-align: center; 
+}
+
+.flexbox-container-board {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;    
+    gap: 30px;
+}
+
+.flexbox-container-board div {
+    margin: 0;
+    padding: 0;
+}
+
+.register-header {
+    text-align: center;
+}
+
+.register-errors {
+    margin-top: 4%;
+    text-align: center;
+}
+
+.flexbox-container-reg {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;    
+    gap: 30px;
+}
+
+.flexbox-container-reg div {
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.md-form-input {
+
+
+
+    background: var(--bgFormEls);
+    transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+        transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.user-post-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;    
+    gap: 30px;
+}
+
+.user-post-flex div {
+    margin: 0;
+    padding: 0;
+}
+
+.index-format-flex {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    
+    height: calc(100vh - 30px);
+    width: 38%;
+    border: 1px solid #F9B5AC;
+}
+
+.index-box-border { 
+    border: 1px solid #F9B5AC; 
+}
+
+.index-format-flex div {
+    margin: 0;
+    padding: 0;
+}
+
+.index-data-info div {
+    height: 100%;
+}
+
+.main-content-center { 
+    justify-content: center; 
+    display: flex;
+}
+
+.text-header {
+    margin: 0;
+    background-color: #F9B5AC;
+}
+
+
+.announcments-header {
+    margin: 0;
+    width: 50%;
+    background-color: #F9B5AC;
+    text-align: center;
+}
+
+.index-sidebar {
+    border-left: 1px solid #F9B5AC;
+    height: calc(100vh - 40px);
+    margin-left: auto;
+}
+
+.post-list-div {
+    font-size: 1vw;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+.form-submit-content {
+    margin: auto;
+    width: 32%;
+}
+
+.form-input-text {
+    margin: none;
+    border: 1px solid black;
+    border-radius: 5%;
+    width: 40%;
+}
+
+.board-form {
+    width: 80%;
+    margin: 0 auto;
+}
+.board-input { resize: none; }
+.board-label, .board-input { display: inline-block; }
+.board-label { width: 30%; text-align: right; }
+
+.board-label+.board-input { width: 30%; margin: 0 30% 0 4%; }
+.board-input+.board-input { float: right; }
+
+.post {
+    border: 1px solid #F9B5AC;
+    width: 90%;
+}
