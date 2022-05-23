@@ -138,6 +138,7 @@
                     ?>
                 </h1>
                 
+                
 
                 <form 
                     method="POST" 
@@ -156,8 +157,9 @@
                             <input type="submit" value="Comment">
                         </div>
                     </div>
-                </form>
+                </form><br><br>
 
+                <a href="/<?php echo $board_name; ?>">Go back</a><br>
                 <?php
 
                     foreach($thread_data["comments"] as $comment) {             //Loop over the comments
