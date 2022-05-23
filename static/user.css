@@ -1,0 +1,29 @@
+.user-banned {
+    width: 45%;
+    border: 1px dashed black;
+    margin: auto;
+    text-align: center;
+}
+
+.user-banned-title {
+    background: black;
+    color: white;
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.user-content {
+    width: 45%;
+    border: 1px dashed black;
+    margin: auto;
+    text-align: center;
+}
+
+.user-content-title {
+    background: black;
+    color: white;
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 0px;
+}

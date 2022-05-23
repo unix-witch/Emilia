@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Fantasque Sans Mono';
+    src:url('/static/Webfonts/FantasqueSansMono-Regular.woff2') format('woff2'),
+        url('/static/Webfonts/FantasqueSansMono-Regular.woff') format('woff'), 
+        url('/static/Webfonts/FantasqueSansMono-Regular.ttf') format('truetype'), 
+        url('/static/Webfonts/FantasqueSansMono-Regular.svg#FantasqueSansMono-Regular') format('svg'); 
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'Fantasque Sans Mono';
+}
+
+.link:link    { color: black; }
+.link:visited { color: black; }
+
+a:link    { color: black; }
+a:visited { color: black; }
+
+h4 {
+    padding: 1px;
+    margin: 2px;
+}
+
+.error        { color: salmon; }
+
+.footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%
+}

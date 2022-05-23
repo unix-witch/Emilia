@@ -1,0 +1,113 @@
+.thread-form-contents {
+    width: 45%;
+    margin: auto;
+    text-align: left;
+}
+
+.header-div {
+    text-align: center;
+}
+
+.thread-header {
+    background: #000f;
+    color: white;
+}
+
+.thread-post {
+    border: 1px solid black;
+    text-align: left;
+    margin: 2px;
+    padding: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.form-div {
+    border: 1px dashed black;
+    width: 75%;
+    text-align: center;
+    margin: auto;
+}
+
+.thread-comment {
+    border: 1px solid black;
+    padding: 8px;
+    margin: 4px;
+    text-align: left;
+}
+
+.img {
+    max-width: 100%;
+}
+
+textarea {
+    width: 10%;
+    resize: none;
+}
+
+input {
+    border-radius: 0;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px;
+    font: monospace;
+    font-family: 'Fantasque Sans Mono';
+    
+    padding: 4px;
+}
+
+
+
+label, input {
+    display: inline-block;
+}
+
+label {
+    width: 30%;
+    text-align: right;
+}
+
+label + input {
+    width: 30%;
+    margin: 4px 30% 8px 4%;
+}
+
+input + input {
+    float: right;
+}
+
+
+
+
+
+
+
+textarea {
+    border-radius: 0;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px;
+    font: monospace;
+    font-family: 'Fantasque Sans Mono';
+    
+    padding: 4px;
+    display: block;
+}
+
+
+
+label, textarea {
+    display: inline-block;
+}
+
+label {
+    width: 30%;
+    text-align: right;
+}
+
+label + textarea {
+    width: 30%;
+    margin: 4px 30% 8px 4%;
+}
+
+textarea + textarea {
+    float: right;
+}

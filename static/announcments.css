@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+}
+
+.announcments-container {
+    text-align: center;
+    margin: 5%;
+    width: 90%;
+}
+
+.announcments-post {
+    text-align: left;
+    width: 45%;
+    margin: auto;
+}
+
+.announcement-date {
+    background: #000f;
+    color: white;
+    text-align: center;
+}
