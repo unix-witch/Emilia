@@ -119,7 +119,7 @@
 
         <div class="user-content">
             <h1 class="user-content-title"><?php echo $username ?></h1>
-            <div style="text-align: left; margin-left: 8px; padding-left: 8px">
+            <div class="user-data">
                 <?php 
                     switch ($user_perms) {                                      //Switch case for permission level
                         case 0: echo "This user is a regular user"; break;

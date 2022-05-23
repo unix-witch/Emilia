@@ -92,7 +92,6 @@
                 
                 $fp = fopen("./database/posts/$board_name/$thread.json", "w");
                 fwrite($fp, json_encode($post_data));
-                var_dump(json_encode($post_data));
                 fclose($fp);
             } else $image_error = "File is not an image";
         }
