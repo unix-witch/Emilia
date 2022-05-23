@@ -31,5 +31,9 @@ h4 {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%
+    width: 100%;
+}
+
+.footer-highlight {
+    background-color: white;
 }

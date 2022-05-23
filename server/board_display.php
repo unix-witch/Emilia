@@ -5,8 +5,8 @@
         echo "<div style=\"text-align: center;\" > ";                           //Echo the centering div
         
         if (!$_SESSION["authed"]) {
-            echo "[ <a href=\"login\">login</a>|";
-            echo "<a href=\"register\">register</a> ]";
+            echo "[ <a href=\"/login\">login</a>|";
+            echo "<a href=\"/register\">register</a> ]";
         } else 
             echo "[ <a href=\"/usr/$username\">$username</a> ]";
 

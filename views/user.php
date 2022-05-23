@@ -80,7 +80,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php ?></title>
+        <title>User Profile</title>
         
     
         <meta charset="utf-8">
@@ -99,6 +99,7 @@
     </head>
     <body>
         <br><br>
+        
         <?php
             if (!$account_exist) {
                 c404();
@@ -114,6 +115,7 @@
                 echo "This user, $username ($user_address) has been banned";
                 echo "</div><br><br>";
             }
+            
             
         ?>
 
@@ -133,6 +135,10 @@
                     echo "<br>Account created on $user_account_created<br>";
                     echo "Bio: $user_bio";
                 ?>
+                <br><br>
+                <div style="text-align: center">
+                    <a href="/">Go back<a>
+                </div>
             </div>
         </div>
     </body>

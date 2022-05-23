@@ -28,7 +28,7 @@
         $board_name = $user_request;
 
         if (empty($content)) $cont_error = "Content cannot be empty";
-        if (empty($post_error) || empty($cont_error)) $erorr = true;
+        if (empty($post_error) || empty($cont_error)) $error = true;
 
         if (!$error) {
             $image_path = "";
@@ -159,6 +159,7 @@
                 </form><br><br>
 
                 <a href="/<?php echo $board_name; ?>">Go back</a><br>
+
                 <?php
 
                     foreach($thread_data["comments"] as $comment) {             //Loop over the comments
@@ -178,6 +179,7 @@
                         echo "</div>";
                     }
                 ?>
+                <a href="/<?php echo $board_name; ?>">Go back</a><br>
             </div>
         </div>
 
