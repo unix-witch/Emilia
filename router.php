@@ -54,6 +54,10 @@ switch ($user_request) {
     case 'session':         require __DIR__ . '/server/reset.php';      break;  //File that will reset the session if needed
     case 'updates':         require __DIR__ . '/server/update.php';     break;  //Updates that the server has
 
+    case 'terms':           require __DIR__ . '/gdpr/terms.html';       break;
+    case 'privacy':         require __DIR__ . '/gdpr/privacy.html';     break;
+    case 'cookie':          require __DIR__ . '/gdpr/cookie.html';      break;
+
     case 'graph-image.png': readfile("./images/graph-image.png");       break;  //Send the open graph image
 
     default:
