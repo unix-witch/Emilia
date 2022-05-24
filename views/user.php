@@ -103,7 +103,6 @@
         
         if (!empty($new_username))                                              //Check if user wants to update username
             if (is_null($username_take)) {                                      //Check if username was not taken
-                var_dump($new_username);
                 $update_username_query = sprintf(                               //Format the new SQL query
                     "UPDATE Users SET UserName = '%s' WHERE UserName = '%s';",
                     $new_username,
@@ -114,21 +113,37 @@
                 $database->query($update_username_query);                       //Query the update username statment
 
                 $_SESSION["username"] = $new_username;                          //Update so that form listing works
-
+                header("Refresh:0");
             } else $username_error = "Username is already taken";               //Update username error
     
     
-        
+        if (!empty($new_bio))
+            if (strlen($new_bio) < 255) {
+                $update_bio_query = sprintf(
+                    "UPDATE Users SET UserBio = '%s' WHERE UserName = '%s';",
+                    $new_bio,
+                    $username
+                );
+
+                $database->query($update_bio_query);
+                header("Refresh:0");
+            } else $bio_error = "Bio is too long!";
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+        if (!empty($new_pass) || !empty($new_pass_conf))
+            if (strcmp($new_pass, $new_pass_conf) == 0) {
+                $password_hash = password_hash($new_pass, PASSWORD_BCRYPT);
+                
+                $update_pass_query = sprintf(
+                    "UPDATE Users SET UserPass = '%s' WHERE UserName = '%s';",
+                    $password_hash,
+                    $username
+                );
+
+
+                $database->query($update_pass_query);
+                header("Refresh:0");
+            } else $password_error = "Passwords do not match";
     }
     
 ?>

@@ -19,8 +19,8 @@
         }
         echo "]";
 
-        if (!$_SESSION["authed"]) {
-            echo "[ <a href=\"/session\">log out</a> ]";                        //Easy logout
+        if ($_SESSION["authed"]) {                                              //Check if user loged in
+            echo "[ <a href=\"/session\">log out</a> ]";                        //Easy logout thingy
         }
 
         echo "</div>";                                                          //Close the centering div
