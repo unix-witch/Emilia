@@ -79,7 +79,7 @@
                 $new_data["comments"] = array(
                     "0" => array(                                               //0 is the first comment always
                         "user" => $username,                                    //Username of the first "comment" 
-                        "cont" => $content,                                     //Actual content,
+                        "cont" => nl2br($content),                              //Actual content,
                         "time" => $current_date,                                //Date to check if something is dead or not
                         "image" => $image_path                                  //Path to the image data
                     ),
@@ -188,7 +188,7 @@
                 </form>
                 <br>
                 <br>
-            </div>
+            </div><br>
 
             <?php
                 $board_name = $user_request;                                    //Here to make code more clear
@@ -214,7 +214,7 @@
 
                     $latest_id = max($file_data["comments"]);
                     $comment = $latest_id["cont"];
-                    
+                   
                     
                     echo "<div class=\"header-div\">";
                     echo "<h3 class=\"board-post\">";

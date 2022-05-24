@@ -63,7 +63,7 @@
                 $t_id = intval($thread);
 
                 $comment_data["user"] = $username;
-                $comment_data["cont"] = $content;
+                $comment_data["cont"] = nl2br($content);
                 $comment_data["time"] = $current_date;
                 $comment_data["image"] = $image_path;
 
