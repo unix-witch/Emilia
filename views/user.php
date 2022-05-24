@@ -18,6 +18,13 @@
     $user_account_created = "";
     $user_perms = 0;
 
+    $username_error = "";
+    $bio_error = "";
+    $password_error = "";
+    $password_conf_error = "";
+
+    $form_action = htmlspecialchars($_SERVER["PHP_SELF"]);
+
     $database->query("CREATE TABLE IF NOT EXISTS Users (
         UserID      INTEGER         NOT NULL PRIMARY KEY AUTOINCREMENT, --
         UserName    VARCHAR(256)    NOT NULL,                           --Username. 256 char limit
@@ -69,11 +76,59 @@
         $creationdate_sql = $database->query($creationdate_sql);
         $user_perms_sql = $database->query($user_perms_sql);
 
-        $user_banned = $user_banned_sql->fetchArray()[0];
-        $user_address = $user_address_sql->fetchArray()[0];
-        $user_bio = $user_bio_sql->fetchArray()[0];
-        $user_account_created = $creationdate_sql->fetchArray()[0];
-        $user_perms = $user_perms_sql->fetchArray()[0];
+        $user_banned = $user_banned_sql->fetchArray()[0];                       //Fetch if the user is banned
+        $user_address = $user_address_sql->fetchArray()[0];                     //Fetch the user IP address
+        $user_bio = $user_bio_sql->fetchArray()[0];                             //Fetch the user bio
+        $user_account_created = $creationdate_sql->fetchArray()[0];             //Fetch account creation date
+        $user_perms = $user_perms_sql->fetchArray()[0];                         //Fetch user perms
+    }
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {                                 //Check if form was sent
+        $username_update  = $_POST["username"];                                 //Get form username
+        $bio_update       = $_POST["bio"];                                      //Get form bio
+        $pass_update      = $_POST["password"];                                 //Get first form password
+        $pass_conf_update = $_POST["pass_conf"];                                //Get second form password
+
+        $new_username  = filter_var($username_update, FILTER_SANITIZE_STRING);  //Filter the new username
+        $new_bio       = filter_var($bio_update, FILTER_SANITIZE_STRING);       //Filter the new bio
+        $new_pass      = filter_var($pass_update, FILTER_SANITIZE_STRING);      //Filter the first password provided
+        $new_pass_conf = filter_var($pass_conf_update, FILTER_SANITIZE_STRING); //Filter the second password provided
+
+        $username_take = sprintf(
+            "SELECT UserName FROM Users WHERE UserName='%s';", $new_username
+        );
+
+        $username_take = $database->querySingle($username_take);
+        
+        if (!empty($new_username))                                              //Check if user wants to update username
+            if (is_null($username_take)) {                                      //Check if username was not taken
+                var_dump($new_username);
+                $update_username_query = sprintf(                               //Format the new SQL query
+                    "UPDATE Users SET UserName = '%s' WHERE UserName = '%s';",
+                    $new_username,
+                    $username
+                );
+
+
+                $database->query($update_username_query);                       //Query the update username statment
+
+                $_SESSION["username"] = $new_username;                          //Update so that form listing works
+
+            } else $username_error = "Username is already taken";               //Update username error
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
     
 ?>
@@ -98,6 +153,7 @@
         <link rel="stylesheet"      href="/static/board-display.css">
     </head>
     <body>
+        <?php display_board($boards); ?>
         <br><br>
         
         <?php
@@ -134,12 +190,68 @@
                     }
                     echo "<br>Account created on $user_account_created<br>";
                     echo "Bio: $user_bio";
+
+                    
+
                 ?>
                 <br><br>
-                <div style="text-align: center">
-                    <a href="/">Go back<a>
-                </div>
             </div>
         </div>
+        <br>
+        <?php
+            if (strcmp($username, $_SESSION["username"]) == 0)
+                echo "
+                    <div class=\"user-content\">
+                        <h1 class=\"user-content-title\">Change user data</h1>
+                        <div>
+                            <p>
+                                note: You only have to change 1 value. 
+                                you do not need to change all    
+                            </p>
+                            
+                            <form method=\"POST\" action=$form_action>
+                                <label>
+                                    username 
+                                    <span class=\"error\">$username_error
+                                    </span>
+                                </label>
+                                <input 
+                                    type=\"text\" 
+                                    id=\"username\" 
+                                    name=\"username\">
+                                
+                                <label for=\"bio\">bio</label>
+                                <textarea id=\"bio\" name=\"bio\"></textarea>
+
+                                <label for=\"password\">
+                                    Password
+                                </label>
+                                <input 
+                                    type=\"password\" 
+                                    id=\"password\"
+                                    name=\"password\"
+                                >
+                                
+                                <label for=\"pass_conf\">Confirm Password</label>
+                                <input 
+                                    type=\"password\" 
+                                    id=\"pass_conf\"
+                                    name=\"pass_conf\"
+                                >
+
+                                <div style=\"text-align: center\">
+                                    <input type=\"submit\" value=\"Update\">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                ";
+        ?>
+
+        <div style="text-align: center">
+            <br><a href="/">Go back<a>
+        </div>
+
+        <?php display_footer(); ?>
     </body>
 </html>

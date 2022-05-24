@@ -121,7 +121,7 @@
                     <?php
                         if ($logged_in) {
                             echo "You have been logged in!<br>";
-                            echo "You can return to the homepage";
+                            echo "You can return to the homepage ";
                             echo "<a href=\"/\">here</a>";
                         }
                     ?>

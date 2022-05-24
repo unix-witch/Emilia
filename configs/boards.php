@@ -4,7 +4,8 @@
         "pet"       => "show us your pets",
         "mus"       => "Music discussion",
         "hobby"     => "Talk about any hobbys you have",
-        "queer"     => "queer issues and topics"
+        "queer"     => "queer issues and topics",
+        "wd"        => "wikidot"
     );
 
     $max_title_size = 64;

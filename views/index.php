@@ -49,6 +49,16 @@
             ?>
         </div>
 
+        <iframe 
+            src=
+            "https://nojs.sugarfi.dev/embed.php?url=http://beau.tification.club"
+            width="45%" 
+            height="70" 
+            frameborder="0" 
+            style="border: 1px solid black" 
+            title="embedded widget for the nojs webring">
+        </iframe>
+
         <?php display_footer(); ?>
     </body>
 </html>

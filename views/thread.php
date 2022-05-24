@@ -91,7 +91,7 @@
 
                 
                 $fp = fopen("./database/posts/$board_name/$thread.json", "w");
-                fwrite($fp, json_encode($post_data));
+                fwrite($fp, json_encode($post_data) . '\n');
                 fclose($fp);
             } else $image_error = "File is not an image";
         }
@@ -171,7 +171,7 @@
                         echo "<div class=\"thread-comment\">";
                         echo $comment["time"] . '<br>';
                         echo $comment["user"] . ': ' . $comment["cont"];
-                        echo "<br><br>";
+                        echo "<br>";
 
                         if ($comment["image"] != null)
                             echo "<img class=\"img\" src=\"$image_path\">";
@@ -182,6 +182,7 @@
                 <a href="/<?php echo $board_name; ?>">Go back</a><br>
             </div>
         </div>
+        <br><br>
 
         <?php display_footer(); ?>
     </body>
