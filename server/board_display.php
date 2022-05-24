@@ -18,6 +18,11 @@
             echo "</a> ";                                                       //Echo a space for good formatting
         }
         echo "]";
-        echo "</div>";                                                         //Close the centering div
+
+        if (!$_SESSION["authed"]) {
+            echo "[ <a href=\"/session\">log out</a> ]";                        //Easy logout
+        }
+
+        echo "</div>";                                                          //Close the centering div
     }
 ?>
