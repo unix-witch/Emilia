@@ -28,7 +28,7 @@
         $board_name = $user_request;
 
         if (empty($content)) $cont_error = "Content cannot be empty";
-        if (empty($post_error) || empty($cont_error)) $error = true;
+        if (!empty($post_error) || !empty($cont_error)) $error = true;
 
         if (!$error) {
             $image_path = "";
@@ -63,7 +63,7 @@
                 $t_id = intval($thread);
 
                 $comment_data["user"] = $username;
-                $comment_data["cont"] = nl2br($content);
+                $comment_data["cont"] = $content;
                 $comment_data["time"] = $current_date;
                 $comment_data["image"] = $image_path;
 
@@ -74,6 +74,7 @@
                 $post_data = file_get_contents(
                     "./database/posts/$board_name/$thread.json"
                 );
+
 
                 $listing_data = json_decode($listing_data, true);
                 $post_data = json_decode($post_data, true);
@@ -91,7 +92,7 @@
 
                 
                 $fp = fopen("./database/posts/$board_name/$thread.json", "w");
-                fwrite($fp, json_encode($post_data) . '\n');
+                fwrite($fp, json_encode($post_data) . "\n");
                 fclose($fp);
             } else $image_error = "File is not an image";
         }
