@@ -1,7 +1,7 @@
 # Emilia
 Emilia is a complete re-write of Sarah, focused on less bugs and a cleaner
 look for the main page. Emilia still retains the original goal of Sarah,
-to fit in a 1.5in floppy disk, and is still written in pure PHP.
+to fit in a 1.5in floppy disk (excluding fonts), and is still written in pure PHP.
 
 The software uses the 14th revision of the pink-ink license
 

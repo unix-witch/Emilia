@@ -168,9 +168,12 @@
 
                         if ($comment["placeholder"]) continue;
 
+                        $username = $comment["user"];
+
                         echo "<div class=\"thread-comment\">";
                         echo $comment["time"] . '<br>';
-                        echo $comment["user"] . ': ' . $comment["cont"];
+                        echo "<a href=\"/usr/$username\">".$username."</a>";
+                        echo ': ' . $comment["cont"];
                         echo "<br>";
 
                         if ($comment["image"] != null)
