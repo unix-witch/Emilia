@@ -203,24 +203,30 @@
                 $new_list_data = array();
 
 
-                foreach ($list_data[$board_name] as $current_post) {                             //Loop over files
+                foreach ($list_data[$board_name] as $current_post) {            //Loop over files
                     
+
+
                     $post_number = $current_post;
                     $file_data = file_get_contents(
                         "./database/posts/$board_name/$post_number.json"
                     );
 
+
                     $file_data = json_decode($file_data, true);
 
                     $latest_id = max($file_data["comments"]);
                     $comment = $latest_id["cont"];
-                   
+                    
                     
                     echo "<div class=\"header-div\">";
                     echo "<h3 class=\"board-post\">";
                     echo "<a href=\"/$board_name/$post_number\">";
-                    echo $file_data["title"] . ': ' . $comment . '<br>';
-                    
+                    echo $file_data["data"] . " ($post_number)<br>";
+
+                    echo "<div class=\"board-contents\">";
+                    echo $file_data["title"] . ': ' . $comment;
+                    echo "</div>";
                     echo "</a>";
                     echo "</h3>";
                     echo "</div><br>";

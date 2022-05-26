@@ -10,8 +10,14 @@
     text-align: center;
 }
 
-.header-div br {
+.board-contents {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.board-contents br {
     content: " ";
+    white-space: nowrap;
     display: none;
 }
 
